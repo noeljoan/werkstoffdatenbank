@@ -337,8 +337,6 @@ Kurzname + "+" + Behandlungszustand + "+" + Beschichtungsart
 
 Beispiele: `S235JR` (kein Zusatz gesetzt) · `S235JR+N` · `RSt37-2+N`. Ist keines der beiden Felder gesetzt, entspricht der Anzeigename genau dem Kurznamen.
 
-> ℹ️ **Ausnahme Gusseisen:** Bei EN-GJS-/EN-GJL-/EN-GJV-Bezeichnungen ist ein am Kurznamen angehängtes S/U/C (z. B. `EN-GJS-400-15U`) die Probestückart nach EN 1563/EN 1561, **kein** Behandlungszustand — der Buchstabe bleibt fest Teil des Kurznamens (siehe [KI-Import](#-ki-import-datenblatt-import)).
-
 ---
 
 ## 🖥️ GUI im Überblick
@@ -410,23 +408,6 @@ Vollständige, interaktive Referenz unter `/docs` (Swagger) bzw. `/redoc`, sobal
 | `GET /api/normen/{id}/pdf` | Norm-PDF-Anhang |
 | `GET /api/dokumente/{id}/pdf` | Dokument-PDF-Anhang |
 | `POST /api/ki-import/...` | KI-Import-Backend (siehe README_werkstoff_import.md) |
-
----
-
-## 💻 CLI-Referenz
-
-```powershell
-python -m cli.admin --help
-```
-
-| Befehl | Beschreibung |
-|---|---|
-| `gruppe liste / neu / loeschen` | Werkstoffgruppen |
-| `norm liste / neu / loeschen` | Normen-Register |
-| `werkstoff liste / neu / detail / bearbeiten / loeschen` | Werkstoffe |
-| `werkstoff norm` | Norm zuordnen |
-| `eigenschaft mech / phys / chem` | Eigenschaften hinzufügen |
-| `daten beispiele` | Beispieldaten laden (idempotent) |
 
 ---
 
@@ -508,16 +489,6 @@ Checkliste bei Verbindungsproblemen:
 
 ---
 
-## 🚦 Performance-Hinweise
-
-**"Es ruckelt beim Werkstoffwechsel" — liegt das an SQLite?** Nein, sehr wahrscheinlich nicht. Eine reine DB-Abfrage dauert für diese Datenmengen typischerweise **5–40 ms** — der überwiegende Teil der Wechselzeit entsteht durch den **Tkinter-Widget-Aufbau** der Detailansicht (mehrere tausend Tk-Aufrufe, u. a. für die tksheet-Tabellen und Matplotlib-Diagramme), nicht durch die Datenbank. Ein Wechsel zu PostgreSQL würde daran nichts ändern und wäre für eine Single-User-Desktop-App wie diese eher nachteilig (zusätzlicher Verbindungsaufbau/Netzwerk-Overhead ohne echten Nutzen — Postgres lohnt sich erst bei mehreren gleichzeitigen Nutzern oder deutlich größeren Datenmengen).
-
-**Bereits eingebaute Gegenmaßnahmen:**
-- **Lazy Rendering:** Kurven-Tabs (Spannungs-Dehnung, Wöhler, Erweiterte Ermüdung, ZTU/CCT, Plastizität, Bruchmechanik) sowie der Tab „Einflussanalyse" berechnen/zeichnen ihren Inhalt erst, wenn der Reiter tatsächlich sichtbar wird — nicht bei jedem Werkstoffwechsel für alle Tabs gleichzeitig.
-- Wer ein konkretes Ruckeln beobachtet, das sich nicht durch Schließen ungenutzter Tabs bessert: `python -m cProfile` gegen den Werkstoffwechsel laufen lassen (siehe `gui/main_window.py::_on_auswahl`) zeigt zuverlässig, welcher Teil tatsächlich Zeit kostet.
-
----
-
 ## 🛠 Troubleshooting
 
 | Problem | Lösung |
@@ -540,5 +511,5 @@ Checkliste bei Verbindungsproblemen:
 <div align="center">
 
 *Werkstoffdatenbank — intern entwickelt, für den täglichen Engineering-Einsatz.*
-
+*Copyright (C) Noel Joan - 2026. Alle Rechte vorbehalten.*
 </div>
