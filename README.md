@@ -88,7 +88,6 @@ Web-App dann öffnen unter **http://localhost:8000** 🎉
 - [ANSYS-Export](#️-ansys-export)
 - [PDFs zu Dokumenten & Normen](#-pdfs-zu-dokumenten--normen)
 - [Netzwerkzugriff (Handy/Tablet)](#-netzwerkzugriff-handytablet)
-- [Performance-Hinweise](#-performance-hinweise)
 - [Troubleshooting](#-troubleshooting)
 
 ---
@@ -180,8 +179,6 @@ Datenblatt (PDF/TXT) rein → ein LLM extrahiert alle erkennbaren Felder ins Wer
 **Gusseisen-Probestückbuchstaben (S/U/C):** Bei EN-GJS-/EN-GJL-/EN-GJV-Bezeichnungen bezeichnet ein am Kurznamen angehängtes S, U oder C nach EN 1563/EN 1561 die **Art des Probestücks** (getrennt gegossen / angegossen / Strangguss) — **kein** Behandlungszustand, auch wenn zufällig gleichlautende Codes in der Behandlungszustand-Stammliste existieren. Der Buchstabe bleibt Teil des Kurznamens; ein Warnhinweis erscheint in der GUI, sobald ein Gusseisen-Werkstoff geöffnet wird.
 
 **Bruchdehnung A vs. A5 vs. A min:** Ein bloßes „A [%]" ohne weiteren Zusatz sowie „A5 [%]" werden beide nach `a5` gespeichert. Nur bei explizitem „min"/„Amin" im Spaltenkopf geht der Wert nach `a_min`.
-
-> 💡 Beide Varianten nutzen [OpenRouter](https://openrouter.ai/) als KI-Backend — kostenloser API-Key erforderlich, siehe README_werkstoff_import.md.
 
 ---
 
