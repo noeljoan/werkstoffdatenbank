@@ -101,8 +101,6 @@ cd app
 pip install -r requirements.txt
 ```
 
-`tksheet` ist eine **Pflichtabhängigkeit** — ohne installiertes Paket lässt sich die Werkstoff-Detailansicht nicht öffnen (`ImportError`), da sechs Tabs (Mechanisch, Physikalisch, Dynamische Eigenschaften, Wärmebehandlung, Härte, Reinheitsgrad) direkt darauf aufbauen. `tkinterdnd2` (Drag & Drop im Norm-Update-Assistenten) ist dagegen echt optional — fehlt es, läuft die GUI normal weiter, nur ohne Drag & Drop beim PDF-Hochladen.
-
 **Auto-Speichern statt Speichern-Button:** Änderungen an einzelnen Zellen werden automatisch ~0,9 Sekunden nach der letzten Eingabe gespeichert (kein Klick nötig) — ein kleiner Statustext ("✓ Gespeichert HH:MM:SS") bestätigt das unauffällig. Nur die riskanten Aktionen bleiben bewusst mit einer Rückfrage abgesichert: **Zeile löschen** (fragt vor dem sofortigen Löschen+Speichern nach) und **↺ Sitzung zurücksetzen** (stellt den Stand beim Öffnen des Tabs wieder her und speichert diesen sofort).
 
 ---
