@@ -436,44 +436,6 @@ Nur tatsächlich vorhandene Zusatzinformationen werden berücksichtigt.
 
 ---
 
-## 🗄️ Datenmodell
-
-Der aktuelle Datenbankbestand enthält u. a. folgende Tabellen:
-
-```text
-werkstoffe
-werkstoffgruppen
-werkstoff_revisionen
-werkstoff_alternativen
-
-chem_zusammensetzung
-chem_zusatzelemente
-
-mech_eigenschaften
-phys_eigenschaften
-dynamische_eigenschaften
-plast_eigenschaften
-bruchmechanik_eigenschaften
-nasgro_parameter
-
-umwandlung_kennwerte
-ztu_kurvenpunkte
-waermebehandlungen
-haerte_werte
-reinheitsgrade
-
-dokumente
-normen
-liefernormen
-werkstoff_normen
-norm_status_pruefungen
-zusatzsymbole
-```
-
-Aktuell enthält die mitgelieferte Datenbank **14 Werkstoffe, 5 Werkstoffgruppen und 11 Normen**.
-
----
-
 ## 🔄 Migration & Diagnose
 
 Nach Änderungen am Datenmodell:
@@ -489,34 +451,6 @@ python schema_diagnose.py
 ```
 
 Die Migration ist auf wiederholbare Ausführung ausgelegt; vorhandene Daten sollen nicht unnötig überschrieben werden.
-
----
-
-## 🧪 Tests
-
-```powershell
-pytest
-```
-
-oder:
-
-```powershell
-pytest app/tests
-```
-
-Abgedeckte Bereiche umfassen unter anderem:
-
-- Werkstoffformeln
-- Plastizität
-- Wöhler / Ermüdung
-- ANSYS-Plastizität
-- Bruchmechanik
-- Spannungs-Dehnung
-- FKM
-- ZTU
-- Temperaturkurven
-- Norm-Update-Diff
-- API / FFD-Generator
 
 ---
 
