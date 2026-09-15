@@ -640,7 +640,9 @@ maßgebend.
 
 ## 📜 Lizenz
 
+MIT – siehe [`LICENSE`](LICENSE).
 
+*Copyright (C) Noel Joan - 2026. Alle Rechte vorbehalten.*
 
 ---
 
