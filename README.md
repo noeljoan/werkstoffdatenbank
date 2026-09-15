@@ -640,9 +640,7 @@ maßgebend.
 
 ## 📜 Lizenz
 
-Im aktuellen Projektstand ist keine konkrete Open-Source-Lizenz festgelegt.
 
-Vor einer öffentlichen Veröffentlichung sollte eine `LICENSE`-Datei ergänzt werden.
 
 ---
 
